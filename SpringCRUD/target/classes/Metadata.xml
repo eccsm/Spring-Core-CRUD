@@ -9,7 +9,8 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/jdbc https://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
 
-
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
 	<bean id="connectorBean"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
@@ -28,5 +29,9 @@
 	</bean>
 	<bean id="cityBean" class="com.eccsm.model.City">
 
+	</bean>
+
+	<bean id="operationBean" class="com.eccsm.aspect.UserOps" >
+		<property name="dataSource" ref="connectorBean"/>
 	</bean>
 </beans>

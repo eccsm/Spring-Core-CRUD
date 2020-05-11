@@ -1,6 +1,7 @@
 package com.eccsm.services;
 
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -41,7 +42,7 @@ public class CityDaoImpl implements ICityDAO {
 
 	}
 
-	private static final class CityMapper implements RowMapper<City> {
+	public static final class CityMapper implements RowMapper<City> {
 
 		public City mapRow(ResultSet rs, int rowNum) throws SQLException {
 			City city = new City();
